@@ -1,16 +1,15 @@
 window.onload = function(){ 
-	DessertRandomizer.init()
+	DessertRandomizer.addRandomizerListener()
 }
 
 DessertRandomizer = {
-	init: function(){
-		DessertRandomizer.addRandomizerListener()
-	},
 	addRandomizerListener: function(){
 		var randomizeButton = document.getElementById('randomizer')
 		randomizeButton.addEventListener("click", DessertRandomizer.requestDesserts)
 	},
 	requestDesserts: function(){
-		console.log($('#randomizer'))
+		$.ajax({type: 'GET',url: '/desserts',success: function(dessertJson){
+			console.log(dessertJson)
+		}})
 	}
 }
