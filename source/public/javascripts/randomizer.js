@@ -3,11 +3,14 @@ window.onload = function(){
 }
 
 DessertRandomizer = {
-	init:function(){
+	init: function(){
 		DessertRandomizer.addRandomizerListener()
 	},
-	addRandomizerListener:function(){
+	addRandomizerListener: function(){
 		var randomizeButton = document.getElementById('randomizer')
-		console.log(randomizeButton)
+		randomizeButton.addEventListener("click", DessertRandomizer.requestDesserts)
+	},
+	requestDesserts: function(){
+		console.log($('#randomizer'))
 	}
 }
