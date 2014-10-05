@@ -12,13 +12,19 @@ var apiId = '_app_id=' + process.env.USER_ID
 var apiKey  ='&_app_key=' + process.env.USER_KEY
 var yummilyRequestUrl = yummilyUrl + apiId + apiKey + yummilyOptions
 
+
+DatabaseSeeder = {
+	populateData: function(array) {
+		collection.insert(array,function(){
+			console.log("recipes added")
+		})
+	}
+}
+
 request(yummilyRequestUrl, function (error, response, body) {
   if (!error && response.statusCode == 200) {
-  	console.log(response)
-  	console.log(body)
+  	var recipes = JSON.parse(body).matches
+  	console.log("you are adding " + recipes.length + "recipes into the databse")
+  	DatabaseSeeder.populateData(recipes)
   }
 })
-
-// collection.find({},{},function(err, recipes) {
-//   	console.log(recipes)
-// })
