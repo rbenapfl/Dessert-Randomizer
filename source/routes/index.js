@@ -7,11 +7,11 @@ router.get('/', function(req, res) {
 });
 /* GET desserts */
 router.get('/desserts', function(req, res) {
-  var db = req.db
-  var collection = db.get('desserts')
-  collection.find({},{},function(err, recipes) {
-  	res.send(recipes)
-  })
+  var db = req.db.desserts
+	db.find().skip(0).limit(2).toArray(function(err, result) {
+    if (err) throw err;
+    res.json(result);
+	});
 });
 
 module.exports = router;
