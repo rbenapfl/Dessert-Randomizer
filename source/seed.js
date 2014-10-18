@@ -8,7 +8,7 @@ var db = mongo.db("mongodb://localhost:27017/desserts", {native_parser:true});
 var collection = db.collection('desserts')
 
 var yummilyUrl = 'http://api.yummly.com/v1/api/recipes?'
-var yummilyOptions = '&allowedCourse[]=course^course-Desserts&requirePictures=true&maxResult=1'
+var yummilyOptions = '&allowedCourse[]=course^course-Desserts&requirePictures=true&maxResult=900'
 var apiId = '_app_id=' + process.env.USER_ID
 var apiKey  ='&_app_key=' + process.env.USER_KEY
 var yummilyRequestUrl = yummilyUrl + apiId + apiKey + yummilyOptions
