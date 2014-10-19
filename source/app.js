@@ -9,8 +9,11 @@ var mongo = require('mongoskin');
 var db = mongo.db("mongodb://localhost:27017/desserts", {native_parser:true});
 var desserts = db.collection('desserts')
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var request = require('request')
+var env = require('node-env-file')
+env(__dirname + '/.env')    
+
+var routes = require('./routes/routes');
 
 var app = express();
 
@@ -32,7 +35,7 @@ app.use(function(req,res,next){
 });
 
 app.use('/', routes);
-app.use('/users', users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
