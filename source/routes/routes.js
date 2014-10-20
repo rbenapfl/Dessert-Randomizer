@@ -19,7 +19,7 @@ router.get('/desserts', function(req, res) {
   })
 })
 
-router.get('/desserts/:id', function(req, res) {
+router.get('/yummilyaccess', function(req, res) {
   res.json(req.app.locals.keys)
 })
 
