@@ -20,7 +20,7 @@ router.get('/desserts', function(req, res) {
 })
 
 router.get('/desserts/:id', function(req, res) {
-  res.json(req.params.id)
+  res.json(req.app.locals.keys)
 })
 
 module.exports = router;
