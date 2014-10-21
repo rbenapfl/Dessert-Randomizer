@@ -8,11 +8,12 @@ router.get('/', function(req, res) {
 
 router.get('/desserts', function(req, res) {
   var db = req.db.desserts
+  var dessertsToDisplay = 16
   db.count({},function(err,count){
     if (err) throw err
-    var skipMax = count-15
+    var skipMax = count-1-dessertsToDisplay
     var randomSkip = Math.floor((Math.random() * skipMax));
-    db.find().skip(randomSkip).limit(16).toArray(function(err, result) {
+    db.find().skip(randomSkip).limit(dessertsToDisplay).toArray(function(err, result) {
       if (err) throw err
       res.json(result)
     })
