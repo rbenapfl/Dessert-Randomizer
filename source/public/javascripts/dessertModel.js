@@ -11,5 +11,6 @@ DessertModel.prototype = {
 		for (var i = 0; i < this.desserts.length; i++) {
 			thumbnails.push(this.desserts[i].smallImageUrls[0])
 		}
+		return thumbnails
 	}
 }
