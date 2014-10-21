@@ -3,8 +3,8 @@ function DessertModel() {
 }
 
 DessertModel.prototype = {
-	updateDesserts: function(dessertArray) {
-		this.desserts = dessertArray
+	updateDesserts: function(desserts) {
+		this.desserts = desserts
 	},
 	retrieveThumbnails: function() {
 		var thumbnails = []
@@ -12,5 +12,8 @@ DessertModel.prototype = {
 			thumbnails.push(this.desserts[i].smallImageUrls[0])
 		}
 		return thumbnails
+	},
+	getDessertId: function(index) {
+		return this.desserts[index].id
 	}
 }

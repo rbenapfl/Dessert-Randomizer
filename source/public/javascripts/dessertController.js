@@ -1,8 +1,9 @@
 function DessertController(dessertView,dessertModel) {
 	this.display = dessertView
 	this.model = dessertModel
-	//doing this to access controller with ajax response object in the success callback (also helps with line 11 :D )
+	//this helps me on line 12 since i need the controller to be passed the specific dom element clicked on
 	self = this
+	this.activeDessertId = 0
 }
 
 DessertController.prototype = {
@@ -11,22 +12,24 @@ DessertController.prototype = {
 		$('.thumbs').click(function(){self.accessDessertInfo(this)})
 	},
 	requestDesserts: function() {
-		$.ajax({
-			type: 'GET',
-			url: '/desserts',
-			success: function(response){
-				self.setDesserts(response)
-			}
-		})
+		NodeServerRequester.getDesserts(self)
 	},
-	setDesserts: function(dessertJson) {
-		this.model.updateDesserts(dessertJson)
+	setDesserts: function(desserts) {
+		this.model.updateDesserts(desserts)
 		var thumbnailUrls = this.model.retrieveThumbnails()
 		for (var i = 0; i < thumbnailUrls.length; i++) {
 			this.display.setImgUrl(i,thumbnailUrls[i])
 		}
 	},
 	accessDessertInfo: function(imageClicked) {
-		console.log(imageClicked)
+		this.activeDessertId = imageClicked.getAttribute('id')
+		NodeServerRequester.getKeys(self)
+	},
+	requestYummilySearch: function(keys) {
+		var dessertName = this.model.getDessertId(this.activeDessertId-1)
+		YummilyRequester.getRecipeData(keys,dessertName,self)
+	},
+	showRecipeDetails: function(recipeData) {
+		console.log(recipeData)
 	}
 }
