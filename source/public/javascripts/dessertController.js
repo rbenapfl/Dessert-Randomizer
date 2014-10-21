@@ -8,7 +8,7 @@ function DessertController(dessertView,dessertModel) {
 DessertController.prototype = {
 	init: function() {
 		var randomizeButton = document.getElementById('randomizer')
-		randomizeButton.addEventListener("click", self.requestDesserts)
+		randomizeButton.addEventListener('click', self.requestDesserts)
 	},
 	requestDesserts: function() {
 		$.ajax({
@@ -21,6 +21,9 @@ DessertController.prototype = {
 	},
 	setDesserts: function(dessertJson) {
 		this.model.updateDesserts(dessertJson)
-		this.model.retrieveThumbnails()
-	}
+		var thumbnailUrls = this.model.retrieveThumbnails()
+		for (var i = 0; i < thumbnailUrls.length; i++) {
+			this.display.setImgUrl(i,thumbnailUrls[i])
+		}
+	}	
 }
