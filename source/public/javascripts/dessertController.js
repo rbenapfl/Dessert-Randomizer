@@ -30,6 +30,9 @@ DessertController.prototype = {
 		YummilyRequester.getRecipeData(keys,dessertName,self)
 	},
 	showRecipeDetails: function(recipeData) {
-		console.log(recipeData)
+		var largeImageUrl = recipeData.images[0].hostedLargeUrl
+		var recipeName = recipeData.name
+		var recipeSource = recipeData.source.sourceRecipeUrl
+		this.display.showRecipeDetails(largeImageUrl,recipeName,recipeSource)
 	}
 }
