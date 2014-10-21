@@ -1,11 +1,11 @@
 extends layout
 
 block content
-  .header
+  #header
     h1= title
     p Cant decide what you want to make for dessert for the next big event?We can help! Just click the button for some yummy dessert ideas.
     button#randomizer Give Me More Desserts!
-  .images
+  #images
     img.thumbs#1
     img.thumbs#2
     img.thumbs#3
@@ -22,11 +22,11 @@ block content
     img.thumbs#14
     img.thumbs#15
     img.thumbs#16
-  .largeImage(hidden)
-    img#large
+  #largeView(hidden)
+    img#largeImage
     p
     a
-  .footer
+  #footer
     p
       | All recipes and images provided by
       img#logo(src='images/yummilylogo.png')
