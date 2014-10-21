@@ -1,14 +1,14 @@
 function DessertController(dessertView,dessertModel) {
 	this.display = dessertView
 	this.model = dessertModel
-	//doing this to access controller with ajax response object in the success callback
+	//doing this to access controller with ajax response object in the success callback (also helps with line 11 :D )
 	self = this
 }
 
 DessertController.prototype = {
 	init: function() {
-		var randomizeButton = document.getElementById('randomizer')
-		randomizeButton.addEventListener('click', self.requestDesserts)
+		$('#randomizer').click(self.requestDesserts)
+		$('.thumbs').click(function(){self.accessDessertInfo(this)})
 	},
 	requestDesserts: function() {
 		$.ajax({
@@ -25,5 +25,8 @@ DessertController.prototype = {
 		for (var i = 0; i < thumbnailUrls.length; i++) {
 			this.display.setImgUrl(i,thumbnailUrls[i])
 		}
-	}	
+	},
+	accessDessertInfo: function(imageClicked) {
+		console.log(imageClicked)
+	}
 }
