@@ -10,7 +10,8 @@ DessertView.prototype = {
 	},
 	showRecipeDetails: function(imgUrl,name,sourceUrl) {
 		$('#images').hide()
-		$('#randomizerButton').hide()
+		$('#randomizer').hide()
+		$('#back').show()
 		$('#largeView').show()
 		$('#largeImage')[0].src = imgUrl
 		$('h2')[0].innerText = name
