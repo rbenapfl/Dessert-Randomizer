@@ -3,9 +3,10 @@ extends layout
 block content
   #header
     h1= title
-    p Cant decide what you want to make for dessert for the next big event?We can help! Just click the button for some yummy dessert ideas.
-  #randomizerButton
-    button#randomizer Give Me More Desserts!
+    p Cant decide what you want to make for dessert for the next big event? We can help! Just keeping clicking the button for some yummy dessert ideas.  If you see one you like click on it for a link to the recipe!
+  #buttons
+    button#randomizer Give Me Desserts!
+    button#back(hidden) Go Back
   #images
     img.thumbs#1
     img.thumbs#2
@@ -26,10 +27,9 @@ block content
   #largeView(hidden)
     img#largeImage
     h2
-    a#url For Full recipe instructions please clik this link(Thanks Yummily) 
-    button#back Go Back!
+    a#url For Full recipe instructions please clik this link and you will be redirected(Thanks Yummily) 
   #footer
     p
-      | All recipes and images provided by
-      img#logo(src='images/yummilylogo.png')
+      |All recipes and images provided by: 
+      img#logo(src='images/yummilylogo.jpg')
 
