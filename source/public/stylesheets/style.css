@@ -9,7 +9,7 @@ body {
 }
 
 a {
-  color: #00AAFF;
+  color: #0088FF;
   font-size: 20px;
 }
 
@@ -35,22 +35,33 @@ h2 {
 }
 
 #footer {
+  margin-top: 100px;
 	bottom: 0;
-    position: fixed;
-    width: 100%;
+  position: relative;
+  height: 50px;
 }
 
 #footer p {
+  margin:0px;
 	font-size: 30px;
-	margin: 0px;
 }
 
 #logo {
+  margin: 0px;
   border: 0px;
+  vertical-align: bottom;
+}
+
+#images {
+  margin-bottom: 20px;
+}
+
+#largeView {
+  margin-bottom: 100px;
 }
 
 button {
-  background: #00AAFF;
+  background: #0088FF;
   border-radius: 28px;
   font-family: Arial;
   color: #ffffff;
