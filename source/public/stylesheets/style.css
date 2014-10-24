@@ -4,16 +4,26 @@ body {
   font-family: 'Playball', cursive;
   text-align: center;	
   color: #FF0000;
+  font-weight: bold;
   background-image: url('../images/icecream.jpg');
 }
 
 a {
-  color: #00B7FF;
+  color: #00AAFF;
+  font-size: 20px;
 }
 
+img {
+  border: 2px solid #FF0000;
+  margin: 10px;
+}
 
-#header h1 {
+h1 {
 	font-size: 50px;	
+}
+
+h2 {
+  font-size: 30px;
 }
 
 #header p {
@@ -24,11 +34,6 @@ a {
 	margin-bottom: 10px;
 }
 
-
-
-
-
-
 #footer {
 	bottom: 0;
     position: fixed;
@@ -38,4 +43,8 @@ a {
 #footer p {
 	font-size: 30px;
 	margin: 0px;
+}
+
+#logo {
+  border: 0px;
 }
