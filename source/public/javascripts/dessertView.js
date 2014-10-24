@@ -4,6 +4,9 @@ function DessertView() {
 }
 
 DessertView.prototype = {
+	showImages: function() {
+		$('#images').show()
+	},
 	setImgUrl: function(index,url) {
 		var thumbHolder = document.getElementsByClassName('thumbs')[index]
 		thumbHolder.src = url
@@ -13,8 +16,14 @@ DessertView.prototype = {
 		$('#randomizer').hide()
 		$('#back').show()
 		$('#largeView').show()
-		$('#largeImage')[0].src = imgUrl
-		$('h2')[0].innerText = name
-		$('#url')[0].href = sourceUrl
+		document.getElementById('largeImage').src = imgUrl
+		document.getElementById('recipeName').innerText = name
+		document.getElementById('url').href = sourceUrl
+	},
+	goBackToDesserts: function() {
+		$('#back').hide()
+		$('#randomizer').show()
+		$('#largeView').hide()
+		$('#images').show()
 	}
 }	

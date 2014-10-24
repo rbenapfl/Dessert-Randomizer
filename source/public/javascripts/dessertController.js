@@ -34,5 +34,8 @@ DessertController.prototype = {
 		var recipeName = recipeData.name
 		var recipeSource = recipeData.source.sourceRecipeUrl
 		this.display.showRecipeDetails(largeImageUrl,recipeName,recipeSource)
+	},
+	goBackToDesserts: function() {
+		this.display.goBackToDesserts()
 	}
 }
