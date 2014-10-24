@@ -8,13 +8,17 @@ function DessertController(dessertView,dessertModel) {
 
 DessertController.prototype = {
 	init: function() {
-		$('#randomizer').click(self.requestDesserts)
-		$('.thumbs').click(function(){self.accessDessertInfo(this)})
+		$('#randomizer').click(function() {self.requestDesserts()})
+		$('.thumbs').click(function() {self.accessDessertInfo(this)})
+		$('#back').click(function() {self.goBackToDesserts()})
 	},
 	requestDesserts: function() {
 		NodeServerRequester.getDesserts(self)
 	},
 	setDesserts: function(desserts) {
+		if(  $("#images").is(":visible") == false ) {
+			this.display.showImages()
+		}
 		this.model.updateDesserts(desserts)
 		var thumbnailUrls = this.model.retrieveThumbnails()
 		for (var i = 0; i < thumbnailUrls.length; i++) {
