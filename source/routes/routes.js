@@ -8,7 +8,7 @@ router.get('/', function(req, res) {
 
 router.get('/desserts', function(req, res) {
   var db = req.db.desserts
-  var dessertsToDisplay = 16
+  var dessertsToDisplay = 25
   db.count({},function(err,count){
     if (err) throw err
     var skipMax = count-1-dessertsToDisplay
