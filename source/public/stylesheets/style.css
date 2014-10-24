@@ -48,3 +48,14 @@ h2 {
 #logo {
   border: 0px;
 }
+
+button {
+  background: #00AAFF;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  outline: 0;
+}
+
