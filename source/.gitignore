@@ -1,0 +1,7 @@
+logs
+*.log
+
+.env
+node_modules/
+data/local.0
+data/local.ns
