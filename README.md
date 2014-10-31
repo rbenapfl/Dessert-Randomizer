@@ -21,5 +21,5 @@ Dessert-Randomizer
 ![seeding](http://i.imgur.com/pAe3zHC.jpg)
 ###View after randomizing desserts!
 ![desserts](http://i.imgur.com/Z4TNm5f.jpg)
-###Vew after clicking on one for them for details:
+###Vew after clicking on one of them for details:
 ![details](http://i.imgur.com/6nTGVrG.jpg)
