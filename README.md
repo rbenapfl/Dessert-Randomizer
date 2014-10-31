@@ -1,7 +1,7 @@
 Dessert-Randomizer
 ==================
 
-#####Node JS app that gives users random desserts and recipes in case they cant pick themselves!
+#####Node JS app that gives users random desserts and recipes in case they can't pick themselves!
 ######This is my first time coding a node/express application.  I learned how to handle routes in express, pass in a mongo database collection as a route resource, use a lightweight library for client side http requests, store environment variables and pass to routes as locals, use Jade for html templating and basically how to structure files in a scalable way.
 ######I am very comfortble with my client side Javascript, and I decided to use an MVC strcture because I had an array of Jsons that needed to be stored on the client in case the user wanted details for a specific dessert (clicking on it).  One of my controller functions does do a model job in that regard but the functionality of the website didn't require it to be saved for later.
 ####Put that json parsing in the model and create two additional function calls in the controller instead!!!(Says the MVC purists)
