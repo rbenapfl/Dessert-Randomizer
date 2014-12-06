@@ -8,7 +8,7 @@ Dessert-Randomizer
 ![controllerfunction](http://i.imgur.com/J0AM8aU.jpg)
 ######I think assigning listeners in the most straightforward way possible in the controller is the way to go!
 ![controllertop](http://i.imgur.com/VPib8bc.jpg)
-######I decided to use self to reference my controller because that 2nd listener is on a class of DOM elements and I need to pass the specific one clicked on to a function call in my controller. The specific DOM element would have to be referecened by "this" so my controller could still be called on the callback for this listener.
+######I decided to use self to reference my controller because that 2nd listener is on a class of DOM elements and I need to pass the specific one clicked on to a function call in my controller. The specific DOM element would have to be referecened by "this" so my controller could still be called on the callback for this listener by doing this.
 #####My controller passes itself to allow for asychronous callbacks in the route and API requests.  It is really organized to put those in their own modules too!
 ![ajaxexample](http://i.imgur.com/DFTUkZM.jpg)
 ######Thoughts on using Yummily API: at first I thought doing a dessert search the first call would give me recipe directions and some nice photos.  It turned out that they never return recipe directions, the photos are smaller overall than I would like, and I needed to do a secondary API call just to get the larger photo and the source URL for the recipe in order to give the users a link for how to make it.  I wouldn't use Yumily API again if I was dealing with Food and/or recipes because of this.  However, the documentation is pretty easy to follow and they provide a lot of nutrition data if you are looking for that.
